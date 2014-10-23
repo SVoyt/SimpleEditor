@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:viewModel="clr-namespace:SimpleEditor.ViewModel"
         xmlns:controls="clr-namespace:SimpleEditor.Controls"
-        Title="Графический редактор" Height="600" Width="800">
+        Title="Simple graphic editor" Height="600" Width="800">
     <Window.Resources>
         <viewModel:MainViewModel x:Key="ViewModel"/>
         <Style TargetType="TextBlock" x:Key="TitleStyle" >
@@ -30,15 +30,15 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Menu Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Height="30" VerticalAlignment="Top" >
-            <MenuItem Header="Новый" Command="{Binding NewCommand}"/>
-            <MenuItem Header="Сохранить" Command="{Binding SaveCommand}"/>
-            <MenuItem Header="Загрузить" Command="{Binding LoadCommand}"/>
-            <MenuItem Header="Экспорт в PNG" Command="{Binding ExportCommand}"/>
+            <MenuItem Header="New" Command="{Binding NewCommand}"/>
+            <MenuItem Header="Save" Command="{Binding SaveCommand}"/>
+            <MenuItem Header="Load" Command="{Binding LoadCommand}"/>
+            <MenuItem Header="Export to PNG" Command="{Binding ExportCommand}"/>
         </Menu>
 
         <StackPanel Grid.Row="1" Grid.RowSpan="2" Grid.Column="0">
         <Border Style="{StaticResource TitleBorderStyle}">
-            <TextBlock Style="{StaticResource TitleStyle}" Text="Холст"  ></TextBlock>
+            <TextBlock Style="{StaticResource TitleStyle}" Text="Canvas"  ></TextBlock>
         </Border>
 
         </StackPanel>
@@ -48,24 +48,24 @@
         </Border>
 
         <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource TitleBorderStyle}">
-            <TextBlock Style="{StaticResource TitleStyle}" Text="Кисть"  ></TextBlock>
+            <TextBlock Style="{StaticResource TitleStyle}" Text="Brush"  ></TextBlock>
         </Border>
         <StackPanel Grid.Row="2" Grid.Column="1" DataContext="{Binding SceneViewModel}" >
 
             <controls:ColorPicker Margin="5" HorizontalAlignment="Stretch" Height="20" SelectedColor="{Binding Path=Color, Mode=OneWayToSource}"></controls:ColorPicker>
             <Slider Margin="5" Maximum="100" Minimum="1" Value="{Binding Thickness}" ></Slider>
             <Border HorizontalAlignment="Stretch"  CornerRadius="3" Margin="5"  Height="{Binding Thickness}" Background="{Binding Path=ColorString, Mode=OneWay}"/>   
-            <CheckBox Margin="4" IsChecked="{Binding PanMode}" Content="Перемещение слоя (кисть выкл)"></CheckBox>
+            <CheckBox Margin="4" IsChecked="{Binding PanMode}" Content="Move layer (brush off)"></CheckBox>
         </StackPanel>
         <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Grid.Row="3" Grid.Column="1" CanVerticallyScroll="True"  >
             <Border Style="{StaticResource TitleBorderStyle}">
-                <TextBlock Style="{StaticResource TitleStyle}" Text="Слои" ></TextBlock>
+                <TextBlock Style="{StaticResource TitleStyle}" Text="Layers" ></TextBlock>
             </Border>
             <StackPanel Orientation="Horizontal">              
-                <Button Content="Добавить" Margin="5"  Command="{Binding Path=SceneViewModel.AddLayerCommand}"></Button>
-                <Button Content="Удалить"  Margin="5" Command="{Binding Path=SceneViewModel.RemoveLayerCommand}"></Button>
-                <Button Content="Вверх"  Margin="5" Command="{Binding Path=SceneViewModel.UpLayerCommand}"></Button>
-                <Button Content="Вниз" Margin="5" Command="{Binding Path=SceneViewModel.DownLayerCommand}" ></Button>
+                <Button Content="Add" Margin="5"  Command="{Binding Path=SceneViewModel.AddLayerCommand}"></Button>
+                <Button Content="Delete"  Margin="5" Command="{Binding Path=SceneViewModel.RemoveLayerCommand}"></Button>
+                <Button Content="Up"  Margin="5" Command="{Binding Path=SceneViewModel.UpLayerCommand}"></Button>
+                <Button Content="Down" Margin="5" Command="{Binding Path=SceneViewModel.DownLayerCommand}" ></Button>
             </StackPanel>
 
         </StackPanel>

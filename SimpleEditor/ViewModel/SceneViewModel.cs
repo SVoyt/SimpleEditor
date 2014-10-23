@@ -172,7 +172,7 @@ namespace SimpleEditor.ViewModel
             Layers.Clear();
             for (var i = 0; i < Scene.Layers.Count; i++)
             {
-                Layers.Add(new LayerViewModel(Scene.Layers[i]) { Name = String.Format("Слой {0}", i+1) });
+                Layers.Add(new LayerViewModel(Scene.Layers[i]) { Name = String.Format("Layer {0}", i+1) });
             }
 
             SelectedLayerIndex = Scene.SelectedLayerIndex;
