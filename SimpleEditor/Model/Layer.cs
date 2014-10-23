@@ -158,6 +158,9 @@ namespace SimpleEditor.Model
         /// <param name="points">Lines points</param>
         public void DrawLines(Pen pen, Point[] points)
         {
+            if (pen == null)
+                throw new ArgumentNullException("pen");
+
             BufferBitmap = new Bitmap(Bitmap.Width, Bitmap.Height, PixelFormat.Format32bppArgb);
 
             using (var gr = Graphics.FromImage(BufferBitmap))
@@ -177,6 +180,9 @@ namespace SimpleEditor.Model
         /// <param name="p">Point</param>
         public void DrawPoint(Brush brush, float thickness, Point p)
         {
+            if (brush == null)
+                throw new ArgumentNullException("brush");
+
             BufferBitmap = new Bitmap(Bitmap.Width,Bitmap.Height,PixelFormat.Format32bppArgb);
 
             using (var gr = Graphics.FromImage(BufferBitmap))
