@@ -51,8 +51,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Extentions\DrawingExtentionsTest.cs" />
     <Compile Include="Model\LayerBundleTest.cs" />
     <Compile Include="Model\LayerTest.cs" />
+    <Compile Include="Model\SceneTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

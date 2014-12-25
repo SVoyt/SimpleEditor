@@ -145,9 +145,9 @@ namespace SimpleEditor.Model
         public Scene()
         {
             _points = new List<Point>();
+            _selectedLayerIndex = -1;
 
-            Layers = new List<Layer>();
-            SelectedLayerIndex = -1;
+            Layers = new List<Layer>();        
             Color = Color.Black;
             Thickness = 5;     
         }
