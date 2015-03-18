@@ -23,9 +23,9 @@ namespace SimpleEditor.ViewModel
         private const string FileFilter = "Simple Editor files|*.se";
         private const string ExportFilter = "PNG|*.jpg";
 
-        private const string SaveErrorMessage = "Произошла ошибка при попытке сохранить файл:\r\n{0}";
-        private const string LoadErrorMessage = "Произошла ошибка при попытке открыть файл:\r\n{0}";
-        private const string ExportErrorMessage = "Произошла ошибка при попытке сохранить файл в формате PNG:\r\n{0}";
+        private const string SaveErrorMessage = "Error occurred on saving:\r\n{0}";
+        private const string LoadErrorMessage = "Error occurred on opening:\r\n{0}";
+        private const string ExportErrorMessage = "Error occurred on saving to PNG:\r\n{0}";
 
         #endregion
 
